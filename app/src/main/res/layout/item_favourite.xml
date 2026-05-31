@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardFavouriteItem"
+    style="@style/Widget.SwiftRent.SurfaceCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_md">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/space_md">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/favourite_image_frame_size"
+            android:layout_height="@dimen/favourite_image_frame_size"
+            app:cardBackgroundColor="@color/sr_favourite_image_bg"
+            app:cardCornerRadius="@dimen/radius_sm"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:id="@+id/imageFavouriteCar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/favourite_car_image"
+                android:padding="@dimen/favourite_image_inner_padding"
+                android:scaleType="fitCenter"
+                android:src="@drawable/car3_minicooper"
+                tools:src="@drawable/car3_minicooper" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_md"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textFavouriteName"
+                style="@style/TextAppearance.SwiftRent.BodyStrong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sample_car_name" />
+
+            <TextView
+                android:id="@+id/textFavouriteCost"
+                style="@style/TextAppearance.SwiftRent.FavouritePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xs"
+                android:text="@string/sample_daily_cost" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/buttonRemoveFavourite"
+            style="@style/Widget.SwiftRent.PlainIconButton"
+            android:layout_width="@dimen/icon_md"
+            android:layout_height="@dimen/icon_md"
+            android:contentDescription="@string/remove_favourite"
+            android:src="@drawable/ic_heart_filled" />
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

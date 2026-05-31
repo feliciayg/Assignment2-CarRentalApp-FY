@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutFavouritesSection"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textFavouritesTitle"
+        style="@style/TextAppearance.SwiftRent.SectionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/favourites" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerFavourites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_md"
+        android:nestedScrollingEnabled="false"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_favourite" />
+
+    <TextView
+        android:id="@+id/textEmptyFavourites"
+        style="@style/TextAppearance.SwiftRent.Meta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_md"
+        android:gravity="center_horizontal"
+        android:text="@string/no_favourites_yet"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</LinearLayout>

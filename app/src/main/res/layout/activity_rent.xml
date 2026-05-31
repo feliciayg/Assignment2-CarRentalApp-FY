@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rentRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sr_background"
+    tools:context=".ui.RentActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarRent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sr_surface">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/space_screen"
+            android:paddingTop="@dimen/space_lg"
+            android:paddingEnd="@dimen/space_screen">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbarRent"
+                style="@style/Widget.SwiftRent.Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xl"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:title="@string/booking_details"
+                app:titleCentered="false" />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollRentContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="@dimen/space_xl"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/space_screen"
+            android:paddingTop="@dimen/space_lg"
+            android:paddingEnd="@dimen/space_screen">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardRentBalanceChip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    app:cardBackgroundColor="@color/sr_balance_card_bg"
+                    app:cardCornerRadius="@dimen/radius_lg"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/space_lg">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            app:cardBackgroundColor="@color/sr_balance_icon_tile_bg"
+                            app:cardCornerRadius="@dimen/radius_sm"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="11dp"
+                                android:contentDescription="@string/sample_balance_chip"
+                                android:src="@drawable/ic_wallet_simple"
+                                app:tint="@android:color/white" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_md"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.LabelLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/credit_balance"
+                                android:textAllCaps="true"
+                                android:textColor="@color/sr_balance_label_text"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textRentBalanceChip"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="@string/sample_balance_chip"
+                                android:textColor="@color/sr_balance_value_text"
+                                android:textSize="19sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/textSelectedCarLabel"
+                    style="@style/TextAppearance.SwiftRent.SectionLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/rent_selected_car_margin_top"
+                    android:text="@string/selected_car" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSelectedCar"
+                style="@style/Widget.SwiftRent.CarCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_md">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/car_image_height">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/space_md"
+                            app:cardBackgroundColor="@color/sr_surface"
+                            app:cardCornerRadius="@dimen/radius_md"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/space_md">
+
+                                <ImageView
+                                    android:id="@+id/imageSelectedCar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:contentDescription="@string/selected_car_image"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/car3_minicooper"
+                                    tools:src="@drawable/car3_minicooper" />
+                            </FrameLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <ImageButton
+                            android:id="@+id/buttonSelectedFavourite"
+                            style="@style/Widget.SwiftRent.IconCircleButton"
+                            android:layout_gravity="top|end"
+                            android:layout_marginTop="@dimen/favourite_overlay_margin_top"
+                            android:layout_marginEnd="@dimen/favourite_overlay_margin_end"
+                            android:contentDescription="@string/favourite_car"
+                            android:src="@drawable/ic_heart_outline" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/sr_card_content_bg"
+                        android:orientation="vertical"
+                        android:padding="@dimen/car_content_padding">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textSelectedCarName"
+                                style="@style/TextAppearance.SwiftRent.CarTitle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/sample_car_name" />
+
+                            <ImageButton
+                                android:id="@+id/buttonSelectedShare"
+                                style="@style/Widget.SwiftRent.PlainIconButton"
+                                android:layout_width="@dimen/icon_md"
+                                android:layout_height="@dimen/icon_md"
+                                android:contentDescription="@string/share_car"
+                                android:src="@android:drawable/ic_menu_share" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textSelectedCarModelText"
+                            style="@style/TextAppearance.SwiftRent.Meta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/car_detail_spacing_sm"
+                            android:text="@string/sample_car_model_text"
+                            android:textColor="@color/sr_text_primary" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/car_detail_spacing_sm"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textSelectedRatingValue"
+                                style="@style/TextAppearance.SwiftRent.BodyStrong"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/sample_rating_value" />
+
+                            <androidx.appcompat.widget.AppCompatRatingBar
+                                android:id="@+id/ratingSelectedCar"
+                                style="@style/Widget.AppCompat.RatingBar.Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/rating_value_spacing"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:progressBackgroundTint="@color/sr_outline"
+                                android:progressTint="@color/sr_star_accent"
+                                android:rating="4.2"
+                                android:secondaryProgressTint="@color/sr_outline"
+                                android:stepSize="0.5" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/meta_icon_size"
+                                android:layout_height="@dimen/meta_icon_size"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_calendar_small" />
+
+                            <TextView
+                                android:id="@+id/textSelectedCarYearText"
+                                style="@style/TextAppearance.SwiftRent.Meta"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/meta_inline_spacing"
+                                android:text="@string/sample_car_year_text" />
+
+                            <ImageView
+                                android:layout_width="@dimen/meta_icon_size"
+                                android:layout_height="@dimen/meta_icon_size"
+                                android:layout_marginStart="@dimen/meta_group_spacing"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_mileage_small" />
+
+                            <TextView
+                                android:id="@+id/textSelectedCarMileageText"
+                                style="@style/TextAppearance.SwiftRent.Meta"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/meta_inline_spacing"
+                                android:text="@string/sample_car_mileage_text" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textSelectedDailyCost"
+                            style="@style/TextAppearance.SwiftRent.Price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/car_price_margin_top"
+                            android:text="@string/sample_daily_cost" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xl"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textRentalDaysLabel"
+                    style="@style/TextAppearance.SwiftRent.SectionLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rental_days" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardSelectedDaysChip"
+                    style="@style/Widget.SwiftRent.ChipCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="@dimen/rent_selected_days_chip_margin_top">
+
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardRentalDays"
+                style="@style/Widget.SwiftRent.SurfaceCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_md">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_lg">
+
+                    <TextView
+                        android:id="@+id/textSelectedDays"
+                        style="@style/TextAppearance.SwiftRent.ChipCompact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingStart="@dimen/rent_chip_horizontal_padding_compact"
+                        android:paddingTop="@dimen/rent_chip_vertical_padding_compact"
+                        android:paddingEnd="@dimen/rent_chip_horizontal_padding_compact"
+                        android:paddingBottom="@dimen/rent_chip_vertical_padding_compact"
+                        android:text="@string/sample_selected_days" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderRentalDays"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:haloColor="@color/sr_primary_soft"
+                        app:labelBehavior="gone"
+                        android:stepSize="1"
+                        app:thumbColor="@color/sr_primary"
+                        app:tickColorActive="@color/sr_slider_tick"
+                        app:tickColorInactive="@color/sr_slider_tick"
+                        app:trackColorActive="@color/sr_primary"
+                        app:trackColorInactive="@color/sr_slider_track"
+                        android:value="3"
+                        android:valueFrom="1"
+                        android:valueTo="7" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_sm"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextAppearance.SwiftRent.Meta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/one_day" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            style="@style/TextAppearance.SwiftRent.Meta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/seven_days" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/textCostSummaryLabel"
+                style="@style/TextAppearance.SwiftRent.SectionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xl"
+                android:text="@string/cost_summary" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCostSummary"
+                style="@style/Widget.SwiftRent.SurfaceCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_md">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_lg">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextAppearance.SwiftRent.Body"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/daily_cost_label" />
+
+                        <TextView
+                            android:id="@+id/textSummaryDailyCost"
+                            style="@style/TextAppearance.SwiftRent.BodyStrong"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sample_daily_cost" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_md"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextAppearance.SwiftRent.Body"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/rental_days_label" />
+
+                        <TextView
+                            android:id="@+id/textSummaryRentalDays"
+                            style="@style/TextAppearance.SwiftRent.BodyStrong"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sample_rental_days_value" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_md"
+                        android:orientation="horizontal">
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/space_lg"
+                        android:background="@color/sr_divider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_lg"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextAppearance.SwiftRent.TotalLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_cost" />
+
+                        <TextView
+                            android:id="@+id/textSummaryTotalCost"
+                            style="@style/TextAppearance.SwiftRent.PriceCompact"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sample_total_cost" />
+                    </LinearLayout>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardRemainingBalance"
+                        style="@style/Widget.SwiftRent.InnerMutedCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_lg">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/space_md">
+
+                            <TextView
+                                style="@style/TextAppearance.SwiftRent.Meta"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/remaining_credit" />
+
+                            <TextView
+                                android:id="@+id/textRemainingBalance"
+                                style="@style/TextAppearance.SwiftRent.BodyStrong"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/sample_remaining_balance" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardBookingWarning"
+                        style="@style/Widget.SwiftRent.WarningCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_md"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/space_md">
+
+                            <TextView
+                                android:id="@+id/textBookingWarning"
+                                style="@style/TextAppearance.SwiftRent.Warning"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_md"
+                                android:layout_weight="1"
+                                android:text="@string/warning_booking_exceeds_limit"
+                                tools:text="⚠ Booking exceeds the 400 credit limit." />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBookingInfo"
+                style="@style/Widget.SwiftRent.InfoCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_md">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_md">
+
+                    <ImageView
+                        android:layout_width="@dimen/warning_icon_size"
+                        android:layout_height="@dimen/warning_icon_size"
+                        android:contentDescription="@null"
+                        android:src="@android:drawable/ic_dialog_info"
+                        app:tint="@color/sr_info" />
+
+                    <TextView
+                        android:id="@+id/textBookingInfo"
+                        style="@style/TextAppearance.SwiftRent.Body"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_md"
+                        android:layout_weight="1"
+                        android:text="@string/booking_warning" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/layoutRentActions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xl"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonCancelBooking"
+                    style="@style/Widget.SwiftRent.OutlineButtonLarge"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_large_height"
+                    android:layout_weight="1"
+                    android:text="@string/cancel" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonSaveBooking"
+                    style="@style/Widget.SwiftRent.PrimaryButtonLarge"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_large_height"
+                    android:layout_marginStart="@dimen/space_md"
+                    android:layout_weight="1"
+                    android:text="@string/save_booking" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

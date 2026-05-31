@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.SwiftRent.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:minHeight">@dimen/toolbar_height</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="titleTextColor">@color/sr_text_primary</item>
+        <item name="subtitleTextColor">@color/sr_text_secondary</item>
+    </style>
+
+    <style name="Widget.SwiftRent.HeaderToolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:minHeight">0dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:padding">0dp</item>
+        <item name="titleTextColor">@color/sr_primary</item>
+        <item name="titleTextAppearance">@style/TextAppearance.SwiftRent.HeaderTitle</item>
+    </style>
+
+    <style name="Widget.SwiftRent.SurfaceCard" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/sr_surface</item>
+        <item name="cardCornerRadius">@dimen/radius_md</item>
+        <item name="cardElevation">2dp</item>
+        <item name="strokeColor">@color/sr_outline</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="Widget.SwiftRent.CarCard" parent="Widget.SwiftRent.SurfaceCard">
+        <item name="cardCornerRadius">@dimen/radius_lg</item>
+    </style>
+
+    <style name="Widget.SwiftRent.InnerMutedCard" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/sr_surface_muted</item>
+        <item name="cardCornerRadius">@dimen/radius_sm</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="Widget.SwiftRent.InfoCard" parent="Widget.SwiftRent.SurfaceCard">
+        <item name="cardBackgroundColor">@color/sr_info_bg</item>
+        <item name="strokeColor">@color/sr_outline</item>
+    </style>
+
+    <style name="Widget.SwiftRent.WarningCard" parent="Widget.SwiftRent.SurfaceCard">
+        <item name="cardBackgroundColor">@color/sr_warning_bg</item>
+        <item name="strokeColor">@color/sr_warning_stroke</item>
+    </style>
+
+    <style name="Widget.SwiftRent.ChipCard" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/sr_primary_soft</item>
+        <item name="cardCornerRadius">@dimen/radius_lg</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="Widget.SwiftRent.HeaderChipCard" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/sr_header_chip_bg</item>
+        <item name="cardCornerRadius">@dimen/radius_pill</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/sr_header_chip_stroke</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="Widget.SwiftRent.ThemeToggleCard" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@android:color/transparent</item>
+        <item name="cardCornerRadius">@dimen/radius_pill</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@android:color/transparent</item>
+        <item name="strokeWidth">2dp</item>
+    </style>
+
+    <style name="Widget.SwiftRent.StatusChip" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/sr_status_green</item>
+        <item name="cardCornerRadius">@dimen/radius_lg</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="Widget.SwiftRent.FilterButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">@dimen/button_min_height</item>
+        <item name="android:textColor">@color/sr_primary</item>
+        <item name="strokeColor">@color/sr_outline</item>
+        <item name="backgroundTint">@color/sr_primary_soft_alt</item>
+        <item name="cornerRadius">@dimen/radius_sm</item>
+        <item name="iconGravity">textEnd</item>
+        <item name="iconTint">@color/sr_primary</item>
+    </style>
+
+    <style name="Widget.SwiftRent.OutlineButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">@dimen/button_min_height</item>
+        <item name="android:textColor">@color/sr_primary</item>
+        <item name="strokeColor">@color/sr_primary</item>
+        <item name="cornerRadius">@dimen/radius_md</item>
+    </style>
+
+    <style name="Widget.SwiftRent.OutlineButtonLarge" parent="Widget.SwiftRent.OutlineButton">
+        <item name="android:minHeight">@dimen/button_large_height</item>
+        <item name="cornerRadius">@dimen/radius_pill</item>
+        <item name="android:textSize">@dimen/text_button</item>
+    </style>
+
+    <style name="Widget.SwiftRent.PrimaryButton" parent="Widget.Material3.Button">
+        <item name="android:minHeight">@dimen/button_min_height</item>
+        <item name="android:textColor">@color/sr_text_inverse</item>
+        <item name="backgroundTint">@color/sr_primary</item>
+        <item name="cornerRadius">@dimen/radius_md</item>
+    </style>
+
+    <style name="Widget.SwiftRent.PrimaryButtonLarge" parent="Widget.SwiftRent.PrimaryButton">
+        <item name="android:minHeight">@dimen/button_large_height</item>
+        <item name="cornerRadius">@dimen/radius_pill</item>
+        <item name="android:textSize">@dimen/text_button</item>
+    </style>
+
+    <style name="Widget.SwiftRent.IconCircleButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">@dimen/icon_circle_size</item>
+        <item name="android:layout_height">@dimen/icon_circle_size</item>
+        <item name="android:background">@drawable/bg_icon_circle_white</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:tint">@color/sr_primary</item>
+    </style>
+
+    <style name="Widget.SwiftRent.PlainIconButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:tint">@color/sr_text_secondary</item>
+    </style>
+
+    <style name="Widget.SwiftRent.SearchField" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/sr_surface</item>
+        <item name="boxCornerRadiusTopStart">@dimen/radius_lg</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/radius_lg</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/radius_lg</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/radius_lg</item>
+        <item name="boxStrokeColor">@color/sr_outline</item>
+        <item name="hintTextColor">@color/sr_text_hint</item>
+        <item name="startIconTint">@color/sr_text_hint</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.HeaderTitle" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="android:textColor">@color/sr_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_header_title</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.SectionTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/sr_text_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_title</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.SectionLabel" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">@color/sr_text_secondary</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/text_section</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.CarTitle" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textColor">@color/sr_text_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_car_title</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.CardHeading" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/sr_booking_icon</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.Body" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/sr_text_secondary</item>
+        <item name="android:textSize">@dimen/text_body</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.BodyStrong" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/sr_text_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_body</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.Warning" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/sr_warning_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_meta</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.Meta" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/sr_text_secondary</item>
+        <item name="android:textSize">@dimen/text_meta</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.Price" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textColor">@color/sr_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_price</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.PriceCompact" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/sr_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.TotalLabel" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/sr_text_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.Position" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/sr_text_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.Chip" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">@color/sr_primary_dark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_chip</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.ChipCompact" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">@color/sr_primary_dark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_chip_compact</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.HeaderChip" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/sr_header_chip_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_header_chip</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.StatusChip" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textColor">@color/sr_status_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.SwiftRent.FavouritePrice" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/sr_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

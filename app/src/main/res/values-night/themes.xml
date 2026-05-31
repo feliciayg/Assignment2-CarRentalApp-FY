@@ -1,0 +1,21 @@
+<resources>
+
+    <style name="Base.Theme.Assignment2CarRentalAppFY" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/sr_primary</item>
+        <item name="colorOnPrimary">@color/sr_text_inverse</item>
+        <item name="colorPrimaryContainer">@color/sr_primary_soft</item>
+        <item name="colorOnPrimaryContainer">@color/sr_primary_dark</item>
+        <item name="colorSecondary">@color/sr_primary_dark</item>
+        <item name="colorSurface">@color/sr_surface</item>
+        <item name="colorOnSurface">@color/sr_text_primary</item>
+        <item name="colorSurfaceVariant">@color/sr_surface_alt</item>
+        <item name="android:colorBackground">@color/sr_background</item>
+        <item name="android:statusBarColor">@color/sr_header_bg</item>
+        <item name="android:navigationBarColor">@color/sr_background</item>
+        <item name="materialButtonStyle">@style/Widget.Material3.Button</item>
+        <item name="toolbarStyle">@style/Widget.SwiftRent.Toolbar</item>
+    </style>
+
+    <style name="Theme.Assignment2CarRentalAppFY" parent="Base.Theme.Assignment2CarRentalAppFY" />
+
+</resources>
